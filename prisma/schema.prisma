@@ -1,0 +1,40 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = "mysql://root:1234@127.0.0.1:3306/prisma_study?schemas=prisma_study"
+}
+
+model User {
+  id    Int    @id @default(autoincrement())
+  name  String @db.VarChar(255)
+  age   Int
+  posts Post[]
+}
+
+model Post {
+  id      Int    @id @default(autoincrement())
+  title   String @db.VarChar(255)
+  content Int
+  userId  Int
+  user    User   @relation(fields: [userId], references: [id])
+
+  @@index([userId], map: "Post_userId_fkey")
+}
+
+model post_history {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @db.Date
+}
+
+model post_history_test {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @db.Date
+}
+
+model post_history_test1 {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @db.Date
+}

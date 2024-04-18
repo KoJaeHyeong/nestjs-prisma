@@ -1,0 +1,62 @@
+{
+  "openapi": "3.1.0",
+  "servers": [
+    {
+      "url": "http://localhost:4000",
+      "description": "THIS IS LOCAL SERVER"
+    },
+    {
+      "url": "http://localhost:3000",
+      "description": "THIS IS LOCAL SERVER"
+    }
+  ],
+  "info": {
+    "title": "멘ㅁ에멘ㅇ,",
+    "description": "sdsdsd",
+    "version": "v1.0.0",
+    "license": {
+      "name": "UNLICENSED"
+    }
+  },
+  "paths": {
+    "/nestia/{email}": {
+      "get": {
+        "tags": [
+          "API_RESULT"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "description": "",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ITest",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        },
+        "summary": "API IS GOOD",
+        "description": "테스트용 API"
+      }
+    }
+  },
+  "components": {
+    "schemas": {}
+  },
+  "tags": [
+    {
+      "name": "API_RESULT"
+    }
+  ],
+  "x-samchon-emended": true
+}
